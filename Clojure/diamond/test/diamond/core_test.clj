@@ -2,9 +2,13 @@
   (:require [clojure.test :refer :all]
             [diamond.core :refer :all]))
 
+(defn first-row [] " A ")
+(defn last-row [] (first-row))
+(defn middle-row [] "BBB")
+
 (defn print-diamond [a]
   (if (= a "A") ["A"]
-    (if (= a "B") [" A ", "BBB", " A "] 0)))
+    [(first-row) (middle-row) (last-row)]))
 
 (deftest a-test
   (testing "print-diamond 'A' returns 'A'"
