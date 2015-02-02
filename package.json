@@ -1,0 +1,16 @@
+{
+  "name": "Diamond-kata",
+  "version": "1.0.0",
+  "description": "Sample code for the Diamond kata produced at the London Code Dojo Meetup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Kata",
+    "Code",
+    "Dojo"
+  ],
+  "author": "@sleepyfox",
+  "license": "see LICENSE file"
+}
