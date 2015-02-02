@@ -3,25 +3,26 @@
             [diamond.core :refer :all]))
 
 (defn previous [c] 
-  (if (= c \A) 0 
+  (if (= c \A) nil
     (char (- (int c) 1))))
 
-(defn first-row [c] 
-  (str " " (previous c) " "))
+(defn first-part [c] 
+  (str " " (str (previous c)) " "))
 
-(defn last-row [c] 
-  (first-row c))
+(defn last-part [c] 
+  (first-part c))
 
 (defn middle-row [c] 
-  (str c c c))
+  (def middle-row-length (+ 1 (* 2 (- (int c) 65))))
+  (apply str (repeat middle-row-length c)))
 
 (defn print-diamond [c]
   (if (= c \A) ["A"]
-    [(first-row c) (middle-row c) (last-row c)]))
+    [(first-part c) (middle-row c) (last-part c)]))
 
 (deftest previous-test
-  (testing "previous 'A' is 0"
-    (is (= (previous \A) 0)))
+  (testing "previous 'A' is nil"
+    (is (= (previous \A) nil)))
   (testing "previous 'B' is 'A'"
     (is (= (previous \B) \A)))
 )
