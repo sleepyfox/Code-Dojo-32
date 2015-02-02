@@ -27,9 +27,12 @@
     (is (= (previous \B) \A)))
 )
 
-(deftest diamond-test
+(deftest diamond-test-A
   (testing "print-diamond 'A' returns 'A'"
     (is (= (print-diamond \A) ["A"])))
+)
+
+(deftest diamond-test-B
   (testing "print-diamond 'B' returns a list of three strings"
     (is (= (count (print-diamond \B)) 3)))
   (testing "print-diamond 'B' first string is ' A '"
