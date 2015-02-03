@@ -13,20 +13,23 @@
     (char (- (int c) 1))))
 
 (defn first-part [c] 
-  (str " " (str (previous-char c)) " "))
+  (if (= c \A) nil 
+    [(str " " (str (previous-char c)) " ")]))
 
 (defn last-part [c] 
   (first-part c))
 
 (defn middle-row [c] 
   (def square-width (+ 1 (* 2 (- (int c) 65))))
-  (def middle-row-spaces (apply str (repeat (- square-width 2) space)))
+  (def middle-row-spaces (n-spaces (- square-width 2)))
   (str c middle-row-spaces c))
 
 (defn print-diamond [c]
   (if (= c \A) ["A"]
-    [(first-part c) (middle-row c) (last-part c)]))
+    (flatten [(first-part c) (middle-row c) (last-part c)])))
 
+; Tests here
+;
 (deftest n-spaces-test
   (testing "n-spaces 0 should return the empty string"
     (is (= (n-spaces 0) "")))
@@ -35,18 +38,23 @@
   (testing "n-spaces 5 should return '     '"
     (is (= (n-spaces 5) "     "))))
 
-
 (deftest previous-char-test
   (testing "previous-char 'A' is nil"
     (is (= (previous-char \A) nil)))
   (testing "previous-char 'B' is 'A'"
-    (is (= (previous-char \B) \A)))
-)
+    (is (= (previous-char \B) \A))))
+
+(deftest first-part-test 
+  (testing "first-part 'A' is nil"
+    (is (= (first-part \A) nil)))
+  (testing "first-part 'B' is a vector of length 1"
+    (is (= (count (first-part \B)) 1)))
+  (testing "first-part 'B' is [' A ']"
+    (is (= (first (first-part \B)) " A "))))
 
 (deftest diamond-test-A
   (testing "print-diamond 'A' returns 'A'"
-    (is (= (print-diamond \A) ["A"])))
-)
+    (is (= (print-diamond \A) ["A"]))))
 
 (deftest diamond-test-B
   (testing "print-diamond 'B' returns a list of three strings"
@@ -56,5 +64,4 @@
   (testing "print-diamond 'B' middle string is 'B B'"
     (is (= (nth (print-diamond \B) 1) "B B")))
   (testing "print-diamond 'B' last string is ' A '"
-    (is (= (nth (print-diamond \B) 2) " A ")))
-)
+    (is (= (nth (print-diamond \B) 2) " A "))))
