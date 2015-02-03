@@ -4,6 +4,10 @@
 
 (def space (char 32))
 
+(defn n-spaces [n]
+  (if (= n 0) "" 
+    (apply str (repeat n space))))
+
 (defn previous-char [c] 
   (if (= c \A) nil
     (char (- (int c) 1))))
@@ -22,6 +26,15 @@
 (defn print-diamond [c]
   (if (= c \A) ["A"]
     [(first-part c) (middle-row c) (last-part c)]))
+
+(deftest n-spaces-test
+  (testing "n-spaces 0 should return the empty string"
+    (is (= (n-spaces 0) "")))
+  (testing "n-spaces 1 should return ' '"
+    (is (= (n-spaces 1) " ")))
+  (testing "n-spaces 5 should return '     '"
+    (is (= (n-spaces 5) "     "))))
+
 
 (deftest previous-char-test
   (testing "previous-char 'A' is nil"
