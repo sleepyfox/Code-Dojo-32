@@ -41,16 +41,11 @@
   (map new-row (char-range \A letter)))
 
 (defn first-part [c] 
-  (drop-last (make-rows c)))
+  (make-rows c))
 
 (defn last-part [c] 
-  (reverse (first-part c)))
-
-(defn middle-row [c] 
-  (def square-width (+ 1 (* 2 (- (int c) 65))))
-  (def middle-row-spaces (n-spaces (- square-width 2)))
-  (str c middle-row-spaces c))
+  (rest (reverse (first-part c))))
 
 (defn print-diamond [c]
   (if (= c \A) ["A"]
-    (flatten [(first-part c) (middle-row c) (last-part c)])))
+    (flatten [(first-part c) (last-part c)])))
