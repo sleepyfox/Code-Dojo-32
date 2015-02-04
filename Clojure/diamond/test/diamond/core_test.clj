@@ -15,12 +15,6 @@
   (testing "n-spaces 5 should return '     '"
     (is (= (n-spaces 5) "     "))))
 
-(deftest previous-char-test
-  (testing "previous-char A is nil"
-    (is (= (previous-char \A) nil)))
-  (testing "previous-char B is 'A'"
-    (is (= (previous-char \B) \A))))
-
 (deftest char-range-test
   (testing "char-range A should be (A)"
     (is (= (char-range \A \A) (list \A))))

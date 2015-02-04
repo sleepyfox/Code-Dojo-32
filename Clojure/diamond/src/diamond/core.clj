@@ -13,15 +13,9 @@
 ; 
 ; width = (letter-65)*2+1
 
-(def space (char 32))
-
 (defn n-spaces [n]
   (if (<= n 0) "" 
-    (apply str (repeat n space))))
-
-(defn previous-char [c] 
-  (if (= c \A) nil
-    (char (dec (int c)))))
+    (apply str (repeat n " "))))
 
 (defn char-range [start end]
   (map char (range (int start) (inc (int end)))))
