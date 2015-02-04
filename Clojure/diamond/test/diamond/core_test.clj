@@ -119,3 +119,9 @@
     (is (= (make-row 5 \B) " B B ")))
   (testing "make-row 5 C should return 'C   C'"
     (is (= (make-row 5 \C) "C   C"))))
+
+(deftest make-rows-test
+  (testing "make-rows A should return a list of one item"
+    (is (= (count (make-rows \A)) 1)))
+  (testing "make-rows B should return a list with 2 items"
+    (is (= (count (make-rows \B)) 2))))
