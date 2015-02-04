@@ -27,20 +27,6 @@
   (testing "char-range A E should be (A B C D E)"
     (is (= (char-range \A \E) (list \A \B \C \D \E)))))
 
-(deftest first-part-test 
-  (testing "first-part A has one element"
-    (is (= (count (first-part \A)) 1)))
-  (testing "first-part A only element is 'A'"
-    (is (= (first (first-part \A)) "A")))
-  (testing "first-part B is a vector of length 2"
-    (is (= (count (first-part \B)) 2)))
-  (testing "first-part B first element is ' A '"
-    (is (= (first (first-part \B)) " A ")))
-  (testing "first-part B second element is 'B B'"
-    (is (= (last (first-part \B)) "B B")))
-  (testing "first-part 'C' is a vector of length 3"
-    (is (= (count (first-part \C)) 3))))
-
 (deftest make-row-test
   (testing "make-row 1 A should return 'A'"
     (is (= (make-row 1 \A) "A")))

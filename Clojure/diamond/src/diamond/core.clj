@@ -40,12 +40,8 @@
   (def new-row (partial make-row width))
   (map new-row (char-range \A letter)))
 
-(defn first-part [c] 
-  (make-rows c))
-
-(defn last-part [c] 
-  (rest (reverse (first-part c))))
-
 (defn print-diamond [c]
-  (if (= c \A) ["A"]
-    (flatten [(first-part c) (last-part c)])))
+  (if (= c \A) 
+    ["A"]
+    (let [x (make-rows c)]
+      (concat x (rest (reverse x))))))
