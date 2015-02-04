@@ -39,3 +39,6 @@
     ["A"]
     (let [x (make-rows c)]
       (concat x (rest (reverse x))))))
+
+(defn pretty-print-diamond [c]
+  (println (map #(str % "\n") (print-diamond c))))
