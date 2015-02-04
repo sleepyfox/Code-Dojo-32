@@ -16,9 +16,9 @@
     (is (= (n-spaces 5) "     "))))
 
 (deftest previous-char-test
-  (testing "previous-char 'A' is nil"
+  (testing "previous-char A is nil"
     (is (= (previous-char \A) nil)))
-  (testing "previous-char 'B' is 'A'"
+  (testing "previous-char B is 'A'"
     (is (= (previous-char \B) \A))))
 
 (deftest char-range-test
@@ -40,20 +40,6 @@
     (is (= (last (first-part \B)) "B B")))
   (testing "first-part 'C' is a vector of length 3"
     (is (= (count (first-part \C)) 3))))
-
-(deftest diamond-test-A
-  (testing "print-diamond 'A' returns 'A'"
-    (is (= (print-diamond \A) ["A"]))))
-
-(deftest diamond-test-B
-  (testing "print-diamond 'B' returns a list of three strings"
-    (is (= (count (print-diamond \B)) 3)))
-  (testing "print-diamond 'B' first string is ' A '"
-    (is (= (first (print-diamond \B)) " A ")))
-  (testing "print-diamond 'B' middle string is 'B B'"
-    (is (= (nth (print-diamond \B) 1) "B B")))
-  (testing "print-diamond 'B' last string is ' A '"
-    (is (= (nth (print-diamond \B) 2) " A "))))
 
 (deftest make-row-test
   (testing "make-row 1 A should return 'A'"
@@ -80,3 +66,31 @@
     (is (= (first (make-rows \B)) " A ")))
   (testing "make-rows B second element should be 'B B'"
     (is (= (last (make-rows \B)) "B B"))))
+
+(deftest diamond-test-A
+  (testing "print-diamond A returns 'A'"
+    (is (= (print-diamond \A) ["A"]))))
+
+(deftest diamond-test-B
+  (testing "print-diamond B returns a list of three strings"
+    (is (= (count (print-diamond \B)) 3)))
+  (testing "print-diamond B first string is ' A '"
+    (is (= (first (print-diamond \B)) " A ")))
+  (testing "print-diamond B middle string is 'B B'"
+    (is (= (nth (print-diamond \B) 1) "B B")))
+  (testing "print-diamond B last string is ' A '"
+    (is (= (nth (print-diamond \B) 2) " A "))))
+
+(deftest diamond-test-C
+  (testing "print-diamond C returns a list of five strings"
+    (is (= (count (print-diamond \C)) 5)))
+  (testing "print-diamond B first string is '  A  '"
+    (is (= (first (print-diamond \C)) "  A  ")))
+  (testing "print-diamond B second string is ' B B '"
+    (is (= (nth (print-diamond \C) 1) " B B ")))
+  (testing "print-diamond B middle string is ' B B '"
+    (is (= (nth (print-diamond \C) 2) "C   C")))
+  (testing "print-diamond B fourth string is ' B B '"
+    (is (= (nth (print-diamond \C) 3) " B B ")))  
+  (testing "print-diamond B last string is '  A  '"
+    (is (= (last (print-diamond \C)) "  A  "))))
