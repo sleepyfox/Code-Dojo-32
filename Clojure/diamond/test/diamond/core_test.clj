@@ -29,7 +29,7 @@
 
 (deftest first-part-test 
   (testing "first-part 'A' is nil"
-    (is (= (first-part \A) nil)))
+    (is (empty? (first-part \A))))
   (testing "first-part 'B' is a vector of length 1"
     (is (= (count (first-part \B)) 1)))
   (testing "first-part 'B' is [' A ']"
