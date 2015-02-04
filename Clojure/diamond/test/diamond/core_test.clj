@@ -2,9 +2,6 @@
   (:require [clojure.test :refer :all]
             [diamond.core :refer :all]))
 
-
-; Tests here
-;
 (deftest n-spaces-test
   (testing "n-spaces -1 should return the empty string"
     (is (= (n-spaces -1) "")))
