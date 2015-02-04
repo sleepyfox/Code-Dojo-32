@@ -21,7 +21,7 @@
 
 (defn previous-char [c] 
   (if (= c \A) nil
-    (char (- (int c) 1))))
+    (char (dec (int c)))))
 
 (defn char-range [start end]
   (map char (range (int start) (inc (int end)))))
