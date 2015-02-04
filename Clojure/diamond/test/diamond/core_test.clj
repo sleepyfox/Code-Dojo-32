@@ -68,5 +68,11 @@
 (deftest make-rows-test
   (testing "make-rows A should return a list of one item"
     (is (= (count (make-rows \A)) 1)))
+  (testing "make-rows A only element should be 'A'"
+    (is (= (first (make-rows \A)) "A")))
   (testing "make-rows B should return a list with 2 items"
-    (is (= (count (make-rows \B)) 2))))
+    (is (= (count (make-rows \B)) 2)))
+  (testing "make-rows B first element should be ' A '"
+    (is (= (first (make-rows \B)) " A ")))
+  (testing "make-rows B second element should be 'B B'"
+    (is (= (last (make-rows \B)) "B B"))))
