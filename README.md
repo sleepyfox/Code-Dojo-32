@@ -14,6 +14,6 @@ The source of the kata is the Diamond Kata, put simply:
 	 B B
 	  A
 
-The earliest mention I could find of it was [here](http://claysnow.co.uk/recycling-tests-in-tdd/) [2012]
+The earliest mention I could find of it was [here](http://claysnow.co.uk/recycling-tests-in-tdd/) [Seb Rose, Nov 2014]
 
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
