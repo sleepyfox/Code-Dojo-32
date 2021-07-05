@@ -1,10 +1,6 @@
 Code Dojo 32
 ============
-This is my worked example from the 32nd meeting of the London Code Dojo. Feel free to play around with it. I've used Node.js and Ki with the Mocha testing library and the Chai assertion library.
-
-The tests can be run from the command-line with:
-	
-	npm test
+This is my worked example from the 32nd meeting of the London Code Dojo. Feel free to play around with it. I've used Clojure, for no particular reason other than that's what I'm currently working in.
 
 The source of the kata is the Diamond Kata, put simply:
 
@@ -18,7 +14,6 @@ The source of the kata is the Diamond Kata, put simply:
 	 B B
 	  A
 
-The earliest mention I could find of it was [here](http://claysnow.co.uk/recycling-tests-in-tdd/)
+The earliest mention I could find of it was [here](http://claysnow.co.uk/recycling-tests-in-tdd/) [2012]
 
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
-
