@@ -41,4 +41,4 @@
       (concat x (rest (reverse x))))))
 
 (defn pretty-print-diamond [c]
-  (println (map #(str % "\n") (print-diamond c))))
+  (map #(println %) (print-diamond c)))
