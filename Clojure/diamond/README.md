@@ -1,10 +1,19 @@
 # Diamond
 
-This is a Clojure implementation of the Diamond Kata, details [here](../README.md)
+This is a Clojure implementation of the [Diamond Kata](../README.md).
 
-## Usage
+## Testing
 
-    $ java -jar diamond-0.1.0-standalone.jar [args]
+    $ lein test
+    lein test diamond.core-test
+
+    Ran 7 tests containing 28 assertions.
+    0 failures, 0 errors.
+
+## Running
+
+    $ lein repl
+    $ (pretty-print-diamond \D)
 
 ## License
 
