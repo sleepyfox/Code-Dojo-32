@@ -1,0 +1,21 @@
+{
+  "name": "diamond-kata",
+  "version": "1.0.0",
+  "description": "An implementation of the Diamond kata in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine test-diamond.js"
+  },
+  "keywords": [
+    "code",
+    "dojo",
+    "kata",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "@sleepyfox",
+  "license": "CC-BY-NC-SA-3.0",
+  "devDependencies": {
+    "jasmine": "^3.8.0"
+  }
+}
